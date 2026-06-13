@@ -4,7 +4,7 @@ const messageSchema = new mongoose.Schema(
   {
     sender: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",   
+      ref: "User",
       required: [true, "Sender is required"],
     },
     content: {
@@ -15,8 +15,10 @@ const messageSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, 
-}
+    timestamps: true,
+  }
 );
 
-module.exports = mongoose.model("Message", messageSchema);
+module.exports =
+  mongoose.models.Message ||
+  mongoose.model("Message", messageSchema);
