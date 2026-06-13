@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const Message = require("../models/Message");
+const Message = require("../models/message");
 
 const chatHandler = (io) => {
 
